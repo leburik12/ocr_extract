@@ -37,7 +37,7 @@ Prerequisites
     npm or yarn package manager
 Installation
 
-git clone git@github.com:yourusername/receipt-ocr-backend.git
+git clone https://github.com/leburik12/ocr_extract.git
 cd receipt-ocr-backend
 npm install
 
