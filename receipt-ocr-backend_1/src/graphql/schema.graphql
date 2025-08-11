@@ -1,0 +1,36 @@
+scalar Upload
+
+
+type File {
+  filename: String!
+  mimetype: String!
+  encoding: String!
+}
+
+type Receipt {
+  id: ID!
+  storeName: String!
+  purchaseDate: String!
+  totalAmount: Float!
+  items: [Item!]
+  imageUrl: String!
+  createdAt: String!
+}
+
+type Item {
+  id: ID!
+  name: String!
+  quantity: Int
+}
+
+type Query {
+  # Fetches all receipts, can be filtered later
+  # receipts: [Receipt!]
+  receipts(storeName: String, startDate: String, endDate: String): [Receipt!]
+}
+
+type Mutation {
+  # Handles the upload of a receipt image and returns the structured data
+  uploadReceipt(file: Upload!): Receipt!
+  uploadFile(file: Upload!): File!
+}
